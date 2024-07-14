@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Future<void> redirect() async {
     await Future.delayed(const Duration(seconds: 2));
     if (mounted) {
-      context.push(
+      context.pushReplacement(
         const GetStartedScreen(),
       );
     }
