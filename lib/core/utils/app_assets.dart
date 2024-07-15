@@ -4,4 +4,7 @@ abstract class AppAssets {
   static const chooseModeBG = 'assets/images/choose_mode_bg.png';
   static const sun = 'assets/svgs/sun.svg';
   static const moon = 'assets/svgs/moon.svg';
+  static const topPattern = 'assets/svgs/top_pattern.svg';
+  static const bottomPattern = 'assets/svgs/bottom_pattern.svg';
+  static const authBG = 'assets/images/auth_bg.png';
 }
