@@ -1,12 +1,15 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:spotify_app/core/extensions/navigation_extensions.dart';
-import 'package:spotify_app/core/utils/app_assets.dart';
-import 'package:spotify_app/core/widgets/basic_app_button.dart';
-import 'package:spotify_app/src/presentation/choose_mode/screens/choose_mode_screen.dart';
 
-class GetStartedScreen extends StatelessWidget {
-  const GetStartedScreen({super.key});
+import '../../../../core/utils/app_assets.dart';
+import '../../../../core/widgets/basic_app_button.dart';
+import '../widgets/custom_button_mode_option.dart';
+
+class ChooseModeScreen extends StatelessWidget {
+  const ChooseModeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +23,10 @@ class GetStartedScreen extends StatelessWidget {
             ),
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(AppAssets.introBG),
+                image: AssetImage(AppAssets.chooseModeBG),
                 fit: BoxFit.fill,
               ),
             ),
-
           ),
           Container(
             color: Colors.black.withOpacity(0.15),
@@ -39,27 +41,32 @@ class GetStartedScreen extends StatelessWidget {
                 ),
                 const Spacer(),
                 const Text(
-                  'Enjoy Listening To Music',
+                  'Choose Mode',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     fontSize: 18,
                   ),
                 ),
-                const SizedBox(height: 21),
-                const Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 13,
-                    color: Colors.grey,
-                  ),
-                  textAlign: TextAlign.center,
+                const SizedBox(height: 40),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CustomButtonModeOption(
+                      iconPath: AppAssets.moon,
+                      title: 'Dark Mode',
+                    ),
+                    SizedBox(width: 20),
+                    CustomButtonModeOption(
+                      iconPath: AppAssets.sun,
+                      title: 'Light Mode',
+                    )
+                  ],
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 50),
                 BasicAppButton(
                   onPressed: () => context.push(const ChooseModeScreen()),
-                  title: 'Get Started',
+                  title: 'Continue',
                 ),
               ],
             ),
