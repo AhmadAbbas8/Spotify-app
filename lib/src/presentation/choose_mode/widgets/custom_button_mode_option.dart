@@ -8,32 +8,36 @@ class CustomButtonModeOption extends StatelessWidget {
   const CustomButtonModeOption({
     super.key,
     required this.iconPath,
-    required this.title,
+    required this.title, this.onTap,
   });
 
   final String iconPath;
   final String title;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ClipOval(
-          child: BackdropFilter(
-            filter: ImageFilter.blur(
-              sigmaX: 10,
-              sigmaY: 10,
-            ),
-            child: Container(
-              height: 80,
-              width: 80,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Color(0xff30393C).withOpacity(0.5),
+        GestureDetector(
+          onTap:onTap,
+          child: ClipOval(
+            child: BackdropFilter(
+              filter: ImageFilter.blur(
+                sigmaX: 10,
+                sigmaY: 10,
               ),
-              child: SvgPicture.asset(
-                iconPath,
-                fit: BoxFit.none,
+              child: Container(
+                height: 80,
+                width: 80,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Color(0xff30393C).withOpacity(0.5),
+                ),
+                child: SvgPicture.asset(
+                  iconPath,
+                  fit: BoxFit.none,
+                ),
               ),
             ),
           ),

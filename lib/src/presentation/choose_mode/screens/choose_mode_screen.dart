@@ -1,8 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:spotify_app/core/extensions/navigation_extensions.dart';
+import 'package:spotify_app/src/presentation/choose_mode/logic/theme_cubit/theme_cubit.dart';
 
 import '../../../../core/utils/app_assets.dart';
 import '../../../../core/widgets/basic_app_button.dart';
@@ -49,17 +51,23 @@ class ChooseModeScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 40),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     CustomButtonModeOption(
                       iconPath: AppAssets.moon,
                       title: 'Dark Mode',
+                      onTap: () => context
+                          .read<ThemeCubit>()
+                          .updateThemeMode(ThemeMode.dark),
                     ),
                     SizedBox(width: 20),
                     CustomButtonModeOption(
                       iconPath: AppAssets.sun,
                       title: 'Light Mode',
+                      onTap: () => context
+                          .read<ThemeCubit>()
+                          .updateThemeMode(ThemeMode.light),
                     )
                   ],
                 ),
