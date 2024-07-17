@@ -5,6 +5,7 @@ import 'package:spotify_app/core/extensions/navigation_extensions.dart';
 import 'package:spotify_app/core/utils/app_assets.dart';
 import 'package:spotify_app/core/widgets/basic_app_button.dart';
 import 'package:spotify_app/core/widgets/custom_appbar.dart';
+import 'package:spotify_app/src/presentation/auth/screens/signin_screen.dart';
 import 'package:spotify_app/src/presentation/auth/screens/signup_screen.dart';
 
 import '../../../../core/theme/app_colors.dart';
@@ -17,7 +18,7 @@ class SignUpOrSignInScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          CustomAppBar(),
+          const CustomAppBar(),
           Align(
             alignment: Alignment.topRight,
             child: SvgPicture.asset(
@@ -69,15 +70,15 @@ class SignUpOrSignInScreen extends StatelessWidget {
                       Expanded(
                         flex: 1,
                         child: BasicAppButton(
-                          onPressed: () => context.push(SignUpScreen()),
+                          onPressed: () => context.push(const SignUpScreen()),
                           title: 'Register',
                         ),
                       ),
-                      SizedBox(width: 20),
+                      const SizedBox(width: 20),
                       Expanded(
                         flex: 1,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () => context.push(const SignInScreen()),
                           child: Text(
                             'Sign In',
                             style: TextStyle(

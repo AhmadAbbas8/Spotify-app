@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:spotify_app/core/extensions/navigation_extensions.dart';
-import 'package:spotify_app/core/utils/app_assets.dart';
-import 'package:spotify_app/core/widgets/basic_app_button.dart';
-import 'package:spotify_app/core/widgets/custom_appbar.dart';
-import 'package:spotify_app/src/presentation/auth/screens/signin_screen.dart';
+import 'package:spotify_app/src/presentation/auth/screens/signup_screen.dart';
+
+import '../../../../core/utils/app_assets.dart';
+import '../../../../core/widgets/basic_app_button.dart';
+import '../../../../core/widgets/custom_appbar.dart';
 import '../widgets/custom_form_field.dart';
 
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+class SignInScreen extends StatelessWidget {
+  const SignInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class SignUpScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Text(
-              'Register',
+              'Sign In',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 25,
@@ -35,10 +36,6 @@ class SignUpScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 50),
-            const CustomFormField(
-              hintText: 'Full Name',
-            ),
-            const SizedBox(height: 20),
             const CustomFormField(
               hintText: 'Enter Email',
             ),
@@ -49,7 +46,7 @@ class SignUpScreen extends StatelessWidget {
             const SizedBox(height: 20),
             BasicAppButton(
               onPressed: () {},
-              title: 'Create Account',
+              title: 'Sign In',
             ),
           ],
         ),
@@ -60,16 +57,16 @@ class SignUpScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'Do You Have An Account? ',
+              'Not A Member ',
               style: TextStyle(
                 fontWeight: FontWeight.w500,
                 fontSize: 14,
               ),
             ),
             TextButton(
-              onPressed: () => context.pushReplacement(const SignInScreen()),
+              onPressed: () => context.pushReplacement(const SignUpScreen()),
               child: const Text(
-                'Sign In',
+                'Register Now',
               ),
             ),
           ],
