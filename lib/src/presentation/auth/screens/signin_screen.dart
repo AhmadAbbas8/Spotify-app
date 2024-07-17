@@ -42,6 +42,7 @@ class SignInScreen extends StatelessWidget {
             const SizedBox(height: 20),
             const CustomFormField(
               hintText: 'Password',
+              isPassword: true,
             ),
             const SizedBox(height: 20),
             BasicAppButton(
