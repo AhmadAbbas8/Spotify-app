@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spotify_app/core/extensions/is_dark_mode_extensions.dart';
+import 'package:spotify_app/core/extensions/navigation_extensions.dart';
 import 'package:spotify_app/core/utils/app_assets.dart';
 import 'package:spotify_app/core/widgets/basic_app_button.dart';
 import 'package:spotify_app/core/widgets/custom_appbar.dart';
+import 'package:spotify_app/src/presentation/auth/screens/signup_screen.dart';
 
 import '../../../../core/theme/app_colors.dart';
 
@@ -67,7 +69,7 @@ class SignUpOrSignInScreen extends StatelessWidget {
                       Expanded(
                         flex: 1,
                         child: BasicAppButton(
-                          onPressed: () {},
+                          onPressed: () => context.push(SignUpScreen()),
                           title: 'Register',
                         ),
                       ),
