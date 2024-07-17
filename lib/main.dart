@@ -7,7 +7,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:spotify_app/core/theme/app_theme.dart';
 import 'package:spotify_app/src/presentation/choose_mode/logic/theme_cubit/theme_cubit.dart';
 import 'package:spotify_app/src/presentation/splash/screens/splash_screen.dart';
-
+import 'core/service_locator.dart' as sl;
 import 'firebase_options.dart';
 
 Future<void> main() async {
@@ -20,6 +20,7 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await sl.serviceLocatorSetup();
   runApp(const SpotifyApp());
 }
 
