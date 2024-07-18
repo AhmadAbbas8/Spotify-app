@@ -32,7 +32,7 @@ class CustomButtonModeOption extends StatelessWidget {
                 width: 80,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Color(0xff30393C).withOpacity(0.5),
+                  color: const Color(0xff30393C).withOpacity(0.5),
                 ),
                 child: SvgPicture.asset(
                   iconPath,
@@ -42,10 +42,10 @@ class CustomButtonModeOption extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.w500,
             fontSize: 17,
             color: AppColors.grey,
