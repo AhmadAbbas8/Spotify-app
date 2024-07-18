@@ -46,9 +46,15 @@ abstract class AppTheme {
         ),
       ),
     ),
+    progressIndicatorTheme: const ProgressIndicatorThemeData(
+      color: Colors.black,
+    ),
   );
 
   static final darkTheme = ThemeData(
+    progressIndicatorTheme: const ProgressIndicatorThemeData(
+      color: Colors.white,
+    ),
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.transparent,
       elevation: 0,
