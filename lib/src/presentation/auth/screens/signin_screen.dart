@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:spotify_app/core/extensions/navigation_extensions.dart';
 import 'package:spotify_app/src/data/models/auth/signin_user_req.dart';
-import 'package:spotify_app/src/domain/repo/auth_repo/auth_repo.dart';
 import 'package:spotify_app/src/domain/use_cases/auth/signin_use_case.dart';
 import 'package:spotify_app/src/presentation/auth/screens/signup_screen.dart';
 import 'package:spotify_app/src/presentation/home/screens/home_screen.dart';
@@ -82,7 +81,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                 .showSnackBar(snackbar);
                           },
                           (r) => context.pushAndRemoveUntil(
-                              HomeScreen(), (route) => false),
+                              const HomeScreen(), (route) => false),
                         );
                       },
                       title: 'Sign In',

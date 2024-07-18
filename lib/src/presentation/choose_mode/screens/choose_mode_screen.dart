@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -62,7 +61,7 @@ class ChooseModeScreen extends StatelessWidget {
                           .read<ThemeCubit>()
                           .updateThemeMode(ThemeMode.dark),
                     ),
-                    SizedBox(width: 20),
+                    const SizedBox(width: 20),
                     CustomButtonModeOption(
                       iconPath: AppAssets.sun,
                       title: 'Light Mode',

@@ -67,7 +67,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               const SizedBox(height: 20),
               isLoading
-                  ? CircularProgressIndicator()
+                  ? const CircularProgressIndicator()
                   : BasicAppButton(
                       onPressed: () async {
                         setState(() => isLoading = true);
@@ -90,7 +90,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           },
                           (r) {
                             context.pushAndRemoveUntil(
-                              HomeScreen(),
+                              const HomeScreen(),
                               (route) => false,
                             );
                           },
