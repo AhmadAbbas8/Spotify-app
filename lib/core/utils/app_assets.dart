@@ -7,4 +7,6 @@ abstract class AppAssets {
   static const topPattern = 'assets/svgs/top_pattern.svg';
   static const bottomPattern = 'assets/svgs/bottom_pattern.svg';
   static const authBG = 'assets/images/auth_bg.png';
+  static const homeTopCard = 'assets/svgs/home_top_card.svg';
+  static const homeArtist = 'assets/images/home_artist.png';
 }
