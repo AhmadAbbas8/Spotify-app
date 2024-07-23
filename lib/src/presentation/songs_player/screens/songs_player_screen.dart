@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:spotify_app/core/theme/app_colors.dart';
 import 'package:spotify_app/core/widgets/custom_appbar.dart';
 import 'package:spotify_app/src/domain/entities/songs/songs_entity.dart';
+import 'package:spotify_app/src/presentation/songs_player/widgets/song_details.dart';
 
 import '../../../../core/utils/app_url.dart';
 import '../widgets/song_cover.dart';
@@ -28,10 +30,13 @@ class SongsPlayerScreen extends StatelessWidget {
           icon: Icon(Icons.more_vert_rounded),
         ),
       ),
-      body: Column(
-        children: [
-          SongCover(song: song),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SongCover(song: song),
+            SongDetails(song: song),
+          ],
+        ),
       ),
     );
   }
