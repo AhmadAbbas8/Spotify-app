@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            HomeTopCard(),
+            const HomeTopCard(),
             _tabs(),
             SizedBox(
               height: 260,

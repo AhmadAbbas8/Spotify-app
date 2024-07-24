@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:spotify_app/core/extensions/is_dark_mode_extensions.dart';
-import 'package:spotify_app/core/extensions/navigation_extensions.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({

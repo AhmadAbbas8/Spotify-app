@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spotify_app/core/extensions/is_dark_mode_extensions.dart';
+import 'package:spotify_app/core/extensions/navigation_extensions.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../domain/entities/songs/songs_entity.dart';
+import '../../songs_player/screens/songs_player_screen.dart';
 import '../logic/play_list_cubit/play_list_cubit.dart';
 
 class PlayList extends StatelessWidget {
@@ -63,7 +65,9 @@ class PlayList extends StatelessWidget {
         shrinkWrap: true,
         itemBuilder: (context, index) {
           return GestureDetector(
-            onTap: () {},
+            onTap: () => context.push(SongsPlayerScreen(
+              song: songs[index],
+            )),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spotify_app/core/extensions/is_dark_mode_extensions.dart';
+import 'package:spotify_app/core/extensions/navigation_extensions.dart';
+import 'package:spotify_app/src/presentation/songs_player/screens/songs_player_screen.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/utils/app_url.dart';
@@ -40,17 +42,9 @@ class NewsSongs extends StatelessWidget {
         shrinkWrap: true,
         itemBuilder: (context, index) {
           return GestureDetector(
-            onTap: () {
-              // Navigator.push(
-              //     context,
-              //     MaterialPageRoute(
-              //         builder: (BuildContext context)
-              //         => SongPlayerPage(
-              //           songEntity: songs[index],
-              //         )
-              //     )
-              // );
-            },
+            onTap: () => context.push(SongsPlayerScreen(
+              song: songs[index],
+            )),
             child: SizedBox(
               width: 160,
               child: Column(

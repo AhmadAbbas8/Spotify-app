@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:spotify_app/src/domain/entities/songs/songs_entity.dart';
 
 class SongModel extends SongEntity {
