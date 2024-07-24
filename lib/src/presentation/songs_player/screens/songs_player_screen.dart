@@ -21,7 +21,7 @@ class SongsPlayerScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title: Text(
+        title: const Text(
           'Now Playing',
           style: TextStyle(
             fontSize: 18,
@@ -29,13 +29,12 @@ class SongsPlayerScreen extends StatelessWidget {
         ),
         action: IconButton(
           onPressed: () {},
-          icon: Icon(Icons.more_vert_rounded),
+          icon: const Icon(Icons.more_vert_rounded),
         ),
       ),
       body: BlocProvider(
         create: (_) => SongPlayerCubit()
-          ..loadSong(
-              '${AppURLs.songFirestorage}02.mp3?${AppURLs.mediaAlt}'),
+          ..loadSong('${AppURLs.songFirestorage}02.mp3?${AppURLs.mediaAlt}'),
         child: SingleChildScrollView(
           child: Column(
             children: [

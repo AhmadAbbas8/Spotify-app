@@ -28,7 +28,7 @@ class AuthFirebaseDataSourceImpl implements AuthFirebaseDataSource {
   @override
   Future<Either> signUp(CreateUserReq user) async {
     try {
-      var data = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: user.email,
         password: user.password,
       );

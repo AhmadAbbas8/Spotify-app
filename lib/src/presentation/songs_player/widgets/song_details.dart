@@ -31,7 +31,7 @@ class SongDetails extends StatelessWidget {
         ),
         IconButton(
           onPressed: () {},
-          icon: Icon(
+          icon: const Icon(
             Icons.favorite_outline_outlined,
             color: AppColors.darkGrey,
             size: 35,
