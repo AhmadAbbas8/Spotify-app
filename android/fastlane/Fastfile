@@ -1,0 +1,33 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:android)
+
+platform :android do
+  desc "Lane for Firebase app distribution"
+  lane :firebase_distribution do
+   sh "flutter clean"
+   sh "flutter build apk --target-platform android-arm64 --analyze-size"
+   firebase_app_distribution(
+     app: "1:415940511917:android:bbd5c326af14f2661a9e24",
+     firebase_cli_token: "1//03d78D5x2aA-nCgYIARAAGAMSNgF-L9Ir-fc1NIKy3wPNXM58iHo16HzV7MSd_JYpWIfT09aHWVK-S9irGbM3QuUX1uRYBo4guQ",
+     android_artifact_path: "../build/app/outputs/flutter-apk/app-release.apk",
+     android_artifact_type: "APK",
+     testers: "ahmadabbass822@gmail.com, eng.ahmadabbas8@gmail.com",
+     release_notes: "Hello World Form Ahmad Abbas"
+   )
+  end
+
+end
